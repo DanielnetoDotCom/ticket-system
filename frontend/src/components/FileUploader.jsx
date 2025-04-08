@@ -125,20 +125,29 @@ const FileUploader = ({ ticketId }) => {
                                 </button>
                             </div>
 
-                            <ul className="pl-0 text-sm text-gray-700 space-y-1">
-                                {v.files.map((f, i) => (
-                                    <li key={i}>
-                                        <a
-                                            href={`${API_URL}/uploads/${ticketId}/${v.version}/${f}`}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="text-blue-600 hover:underline"
-                                        >
-                                            {f}
-                                        </a>
-                                    </li>
-                                ))}
+                            <ul className="pl-0 text-sm text-gray-700 space-y-2">
+                                {v.files.map((f, i) => {
+                                    const fileUrl = `${API_URL}/uploads/${ticketId}/${v.version}/${f}`;
+                                    return (
+                                        <li key={i} className="flex items-center gap-3">
+                                            <img
+                                                src={fileUrl}
+                                                alt={f}
+                                                className="w-16 h-16 object-cover rounded border"
+                                            />
+                                            <a
+                                                href={fileUrl}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="text-blue-600 hover:underline break-all"
+                                            >
+                                                {f}
+                                            </a>
+                                        </li>
+                                    );
+                                })}
                             </ul>
+
 
                             {v.feedbacks && v.feedbacks.length > 0 && (
                                 <div className="mt-3 bg-white border rounded p-2 text-sm text-gray-800">
