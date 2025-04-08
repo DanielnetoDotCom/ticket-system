@@ -99,4 +99,3 @@ PHP ZEND Certified Engineer
 MCP 70-480 Certified  
 
 [GitHub Profile](https://github.com/DanielnetoDotCom)
-```
