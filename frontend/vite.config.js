@@ -8,6 +8,7 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
+    allowedHosts: ['ticket-system.danielneto.com'],
     host: true,  
     port: 5001,
   },
